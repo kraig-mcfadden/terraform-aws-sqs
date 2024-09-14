@@ -20,9 +20,11 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [aws_iam_policy.queue_access_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_sqs_queue.dlq](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) | resource |
 | [aws_sqs_queue.queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) | resource |
 | [aws_sqs_queue_redrive_allow_policy.dlq_redrive_allow_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue_redrive_allow_policy) | resource |
+| [aws_iam_policy_document.queue_access_policy_doc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
 
@@ -43,6 +45,7 @@ No modules.
 | <a name="output_dlq_arn"></a> [dlq\_arn](#output\_dlq\_arn) | n/a |
 | <a name="output_dlq_id"></a> [dlq\_id](#output\_dlq\_id) | n/a |
 | <a name="output_dlq_url"></a> [dlq\_url](#output\_dlq\_url) | n/a |
+| <a name="output_queue_access_policy_arn"></a> [queue\_access\_policy\_arn](#output\_queue\_access\_policy\_arn) | n/a |
 | <a name="output_queue_arn"></a> [queue\_arn](#output\_queue\_arn) | n/a |
 | <a name="output_queue_id"></a> [queue\_id](#output\_queue\_id) | n/a |
 | <a name="output_queue_url"></a> [queue\_url](#output\_queue\_url) | n/a |

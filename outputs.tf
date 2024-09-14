@@ -21,3 +21,7 @@ output "dlq_arn" {
 output "dlq_url" {
   value = aws_sqs_queue.dlq.url
 }
+
+output "queue_access_policy_arn" {
+  value = aws_iam_policy.queue_access_policy.arn
+}

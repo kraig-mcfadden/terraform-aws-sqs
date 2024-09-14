@@ -27,3 +27,28 @@ resource "aws_sqs_queue_redrive_allow_policy" "dlq_redrive_allow_policy" {
     sourceQueueArns   = [aws_sqs_queue.queue.arn]
   })
 }
+
+data "aws_iam_policy_document" "queue_access_policy_doc" {
+  statement {
+    effect = "Allow"
+
+    actions = [
+      "sqs:ChangeMessageVisibility",
+      "sqs:DeleteMessage",
+      "sqs:GetQueueUrl",
+      "sqs:ReceiveMessage",
+      "sqs:SendMessage",
+    ]
+
+    resources = [
+      aws_sqs_queue.queue.arn,
+      aws_sqs_queue.dlq.arn,
+    ]
+  }
+}
+
+resource "aws_iam_policy" "queue_access_policy" {
+  name        = "${var.queue_name}-queue-access"
+  description = "allow access to the ${var.queue_name} queue and dlq"
+  policy      = data.aws_iam_policy_document.queue_access_policy_doc.json
+}
