@@ -7,7 +7,7 @@ resource "aws_sqs_queue" "queue" {
 
   redrive_policy = jsonencode({
     deadLetterTargetArn = aws_sqs_queue.dlq.arn
-    maxReceiveCount     = 4
+    maxReceiveCount     = var.max_receive_count
   })
 }
 
